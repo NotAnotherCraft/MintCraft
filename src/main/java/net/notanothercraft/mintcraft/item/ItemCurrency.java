@@ -6,7 +6,7 @@ import net.minecraft.item.Item;
  * Created by KJ4IPS on 11/14/2014.
  * An item that has currency
  */
-public class ItemCurrency extends Item {
+public class ItemCurrency extends Item implements IValuable{
 
     private Integer worth;
 
