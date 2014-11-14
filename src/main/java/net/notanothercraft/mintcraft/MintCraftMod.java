@@ -20,6 +20,7 @@ public class MintCraftMod {
     public void onPreInit(FMLPreInitializationEvent e){
         mintCreativeTab = new MintCreativeTab();
         itemCoin = new ItemCoin();
+        itemCoin.setCreativeTab(mintCreativeTab);
         GameRegistry.registerItem(itemCoin,"coin");
     }
 

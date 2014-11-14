@@ -10,7 +10,7 @@ import net.minecraft.item.Item;
  */
 public class MintCreativeTab extends CreativeTabs{
     public MintCreativeTab() {
-        super("MintCraft");
+        super("mintCraft");
     }
 
     @Override
