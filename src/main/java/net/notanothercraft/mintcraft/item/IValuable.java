@@ -5,6 +5,5 @@ package net.notanothercraft.mintcraft.item;
  * An interface for things with monetary worth
  */
 public interface IValuable {
-    public void setWorth(Integer worth);
     public Integer getWorth();
 }
