@@ -6,4 +6,5 @@ coin.diamond.name=Diamond coin
 coin.emerald.name=Emerald coin
 coin.ender.name=Ender coin
 item.coinbag.name=Coin bag
-
+tile.safe.name=Safe
+tile.coinpile.name=Coin pile
