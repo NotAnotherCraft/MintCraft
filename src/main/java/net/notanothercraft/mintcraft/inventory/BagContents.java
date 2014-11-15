@@ -1,14 +1,9 @@
 package net.notanothercraft.mintcraft.inventory;
 
-import com.google.common.collect.Maps;
-import net.minecraft.inventory.Container;
-import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraftforge.common.util.Constants;
-
-import java.util.HashMap;
 
 /**
  * Created by KJ4IPS on 11/14/2014.
