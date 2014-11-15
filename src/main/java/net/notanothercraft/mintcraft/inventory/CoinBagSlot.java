@@ -9,4 +9,5 @@ public class CoinBagSlot extends CoinSlot {
     public CoinBagSlot(IInventory inventory, int index, int x, int y) {
         super(inventory, index, x, y);
     }
+
 }
