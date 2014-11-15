@@ -11,7 +11,7 @@ import net.notanothercraft.mintcraft.item.*;
 public class MintCraftMod {
 
     @Mod.Instance
-    public MintCraftMod instance;
+    public static MintCraftMod instance;
 
     public CreativeTabs mintCreativeTab;
     public ItemCoin itemCoin;
@@ -19,6 +19,7 @@ public class MintCraftMod {
 
     @Mod.EventHandler
     public void onPreInit(FMLPreInitializationEvent e){
+        CoinType.registerCoins();
         mintCreativeTab = new MintCreativeTab();
 
         itemCoin = new ItemCoin();
