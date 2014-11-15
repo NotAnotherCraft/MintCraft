@@ -15,13 +15,19 @@ public class MintCraftMod {
 
     public CreativeTabs mintCreativeTab;
     public ItemCoin itemCoin;
+    public ItemCoinBag itemCoinBag;
 
     @Mod.EventHandler
     public void onPreInit(FMLPreInitializationEvent e){
         mintCreativeTab = new MintCreativeTab();
+
         itemCoin = new ItemCoin();
         itemCoin.setCreativeTab(mintCreativeTab);
         GameRegistry.registerItem(itemCoin, "coin");
+
+        itemCoinBag = new ItemCoinBag();
+        itemCoin.setCreativeTab(mintCreativeTab);
+        GameRegistry.registerItem(itemCoinBag, "coinbag");
     }
 
     @Mod.EventHandler
