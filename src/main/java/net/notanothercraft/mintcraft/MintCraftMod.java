@@ -42,6 +42,7 @@ public class MintCraftMod {
         itemCoinBag = new ItemCoinBag();
         itemCoinBag.setCreativeTab(mintCreativeTab);
         GameRegistry.registerItem(itemCoinBag, "coinbag");
+        itemCoinBag.registerRecipies();
 
         blockCoinPile = new BlockCoinPile();
         blockCoinPile.setCreativeTab(mintCreativeTab);
