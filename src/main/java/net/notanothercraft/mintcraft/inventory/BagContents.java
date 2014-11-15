@@ -1,15 +1,18 @@
 package net.notanothercraft.mintcraft.inventory;
 
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraftforge.common.util.Constants;
+import net.notanothercraft.mintcraft.MintCraftMod;
 
 /**
  * Created by KJ4IPS on 11/14/2014.
  *
  */
-public class BagContents{
+public class BagContents implements IInventory{
 
     private int inventorySize;
     private ItemStack[] items;
@@ -47,15 +50,74 @@ public class BagContents{
         return tag;
     }
 
+    @Override
     public void setInventorySlotContents(int slot, ItemStack stack){
         items[slot] = stack;
     }
 
+    @Override
+    public String getInventoryName() {
+        return null;
+    }
+
+    @Override
+    public boolean hasCustomInventoryName() {
+        return false;
+    }
+
+    @Override
+    public int getInventoryStackLimit() {
+        return 64;
+    }
+
+    @Override
+    public void markDirty() {
+        //Not needed for items!
+    }
+
+    @Override
+    public boolean isUseableByPlayer(EntityPlayer p_70300_1_) {
+        return true;
+    }
+
+    @Override
+    public void openInventory() {
+
+    }
+
+    @Override
+    public void closeInventory() {
+
+    }
+
+    @Override
+    public boolean isItemValidForSlot(int slot, ItemStack stack) {
+        return stack.getItem().equals(MintCraftMod.instance.itemCoin);
+    }
+
+    @Override
     public ItemStack getStackInSlot(int slot) {
         return items[slot];
     }
 
-    public ItemStack getItemStackInSlotOnClosing(int slot){
+    @Override
+    public ItemStack decrStackSize(int slot, int amount) {
+        ItemStack stack = getStackInSlot(slot);
+        if(stack != null){
+            if(stack.stackSize <= amount) { //Take all of them
+                setInventorySlotContents(slot,null);
+            }else{ //some left overt
+                stack = stack.splitStack(amount);
+                if(stack.stackSize < 1){
+                    setInventorySlotContents(slot, null);
+                }
+            }
+        }
+        return stack;
+    }
+
+    @Override
+    public ItemStack getStackInSlotOnClosing(int slot){
         ItemStack stack = getStackInSlot(slot);
         if(stack != null) {
             setInventorySlotContents(slot, null);
@@ -63,7 +125,8 @@ public class BagContents{
         return stack;
     }
 
-    public Integer getSizeInventory() {
+    @Override
+    public int getSizeInventory() {
         return inventorySize;
     }
 }
