@@ -1,9 +1,11 @@
 package net.notanothercraft.mintcraft.item;
 
 import com.google.common.collect.Maps;
+import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.IIcon;
 
 import java.util.HashMap;
 import java.util.List;
@@ -15,6 +17,8 @@ import java.util.List;
 public class ItemCoin extends ItemCurrency{
 
     private HashMap<Integer,CoinType> coinTypes = Maps.newHashMap();
+
+    private IIcon[] textures;
 
     public ItemCoin(){
         super();
@@ -38,7 +42,18 @@ public class ItemCoin extends ItemCurrency{
         return "coin." + coinTypes.get(is.getItemDamage()).getTypename();
     }
 
+    @Override
+    public void registerIcons(IIconRegister iconRegister) {
+        textures = new IIcon[16];
+        for(Integer key : coinTypes.keySet()){
+            textures[key] = iconRegister.registerIcon(coinTypes.get(key).getTexture());
+        }
+    }
 
+    @Override
+    public IIcon getIconFromDamage(int dmg) {
+        return textures[dmg];
+    }
 
     @Override
     public void getSubItems(Item coin, CreativeTabs tab, List types) {
