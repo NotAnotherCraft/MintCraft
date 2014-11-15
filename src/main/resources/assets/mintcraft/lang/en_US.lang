@@ -1,4 +1,7 @@
-itemGroup.mintCraft=MintCraft
+itemGroup.mintCraft=Mintcraft
 item.coin.name=Coin
-item.coiniron.name=Iron Coin
+item.coiniron.name=Iron coin
 item.coinbag.name=Coin bag
+item.coindiamond.name=Diamond coin
+item.coinemerald.name=Emerald coin
+item.coinender.name=Ender coin
