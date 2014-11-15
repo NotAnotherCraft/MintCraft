@@ -7,7 +7,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.creativetab.CreativeTabs;
 import net.notanothercraft.mintcraft.item.ItemCoin;
 
-@Mod(modid = "mintcraft")
+@Mod(modid = "mintCraft", name = "MintCraft", version = "0.0.1")
 public class MintCraftMod {
 
     @Mod.Instance
