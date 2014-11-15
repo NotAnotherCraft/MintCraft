@@ -10,6 +10,6 @@ public class ItemCoinGold extends ItemCoin {
         super();
         this.setWorth(15);
         this.setUnlocalizedName("coingold");
-        this.setTextureName("mintcraft:coin");
+        this.setTextureName("mintcraft:goldcoin");
     }
 }
