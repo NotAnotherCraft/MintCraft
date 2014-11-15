@@ -8,6 +8,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
+import net.minecraft.world.World;
 import net.notanothercraft.mintcraft.MintCreativeTab;
 import net.notanothercraft.mintcraft.item.CoinType;
 import net.notanothercraft.mintcraft.item.IValuable;
@@ -50,8 +51,13 @@ public class BlockCoinPile extends Block implements IValuable {
         }
     }
     @Override
-    public IIcon getIcon(IBlockAccess world, int x, int y, int z, int side) {
-        return textures[world.getBlockMetadata(x,y,z)];
+    public IIcon getIcon(int side, int meta) {
+        return textures[meta];
     }
 
+    @Override
+    public int damageDropped(int damage) {
+        return damage;
     }
+
+}

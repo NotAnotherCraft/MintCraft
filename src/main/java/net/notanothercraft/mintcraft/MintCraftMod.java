@@ -7,6 +7,7 @@ import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.creativetab.CreativeTabs;
 import net.notanothercraft.mintcraft.block.BlockCoinPile;
+import net.notanothercraft.mintcraft.block.itemblock.ItemBlockCoinPile;
 import net.notanothercraft.mintcraft.gui.GuiHandler;
 import net.notanothercraft.mintcraft.item.*;
 import org.apache.logging.log4j.Logger;
@@ -44,7 +45,7 @@ public class MintCraftMod {
 
         blockCoinPile = new BlockCoinPile();
         blockCoinPile.setCreativeTab(mintCreativeTab);
-        GameRegistry.registerBlock(blockCoinPile, "coinpile");
+        GameRegistry.registerBlock(blockCoinPile,ItemBlockCoinPile.class, "coinpile");
     }
 
     @Mod.EventHandler
