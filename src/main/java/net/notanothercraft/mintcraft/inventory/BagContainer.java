@@ -1,13 +1,19 @@
 package net.notanothercraft.mintcraft.inventory;
 
+import com.google.common.collect.Lists;
+import com.sun.javafx.geom.Vec2d;
 import cpw.mods.fml.common.FMLCommonHandler;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.Slot;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.MinecraftServer;
 import net.notanothercraft.mintcraft.MintCraftMod;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by KJ4IPS on 11/15/2014.
@@ -18,30 +24,52 @@ public class BagContainer extends Container {
     protected InventoryPlayer playerInv;
     protected ItemStack bag;
 
+    private static final int[][] slotPositions = new int[][]{
+        {27,15},
+        {63,15},
+        {99,15},
+        {134,15},
+        {27,43},
+        {63,43},
+        {99,43},
+        {134,43}
+
+    };
+
     public BagContainer(InventoryPlayer playerInv, BagContents contents, ItemStack bag){
         this.contents = contents;
         this.playerInv = playerInv;
         this.bag = bag;
         bindBagInv(contents);
-        bindPlayerInv(playerInv);
+        bindPlayerInv(playerInv, 9, 81,4);
     }
 
     protected void bindBagInv(BagContents contents){
         for(int i = 0; i < contents.getSizeInventory(); i++){
-            addSlotToContainer(new CoinSlot(contents,i,i*18,0));
+            addSlotToContainer(new CoinSlot(contents,i,slotPositions[i][0],slotPositions[i][1]));
         }
     }
 
-    protected void bindPlayerInv(InventoryPlayer playerInv){
+    protected void bindPlayerInv(InventoryPlayer playerInv,int drawX, int drawY, int hotbarOffset){
         //main three inventory rows
         for(int i = 0; i < 3 ; i++){
             for(int j = 0; j < 9; j++){
-                addSlotToContainer(new Slot(playerInv, j+i*9+9, 8+j*18, 84+i*18));
+                bindPlayerSlot(playerInv, j+i*9+9, drawX+j*18, drawY+i*18, MintCraftMod.instance.itemCoinBag);
             }
         }
         //hotbar
         for(int i = 0; i < 9; i++){
-            addSlotToContainer(new Slot(playerInv, i, 8+i*18,142));
+            bindPlayerSlot(playerInv, i, drawX + i * 18, drawY + 3*18 + hotbarOffset, MintCraftMod.instance.itemCoinBag);
+        }
+    }
+
+    protected void bindPlayerSlot(InventoryPlayer inv, int index, int drawX, int drawY, Item itemToLock){
+        if(inv.getStackInSlot(index) != null &&
+                inv.getStackInSlot(index).getItem() != null &&
+                inv.getStackInSlot(index).getItem().equals(itemToLock)){
+            addSlotToContainer(new LockedSlot(inv, index, drawX, drawY));
+        }else{
+            addSlotToContainer(new Slot(inv, index, drawX, drawY));
         }
     }
 
