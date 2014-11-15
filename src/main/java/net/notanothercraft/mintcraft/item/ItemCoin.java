@@ -28,8 +28,12 @@ public class ItemCoin extends ItemCurrency{
     }
 
     private void registerCoins() {
-        coinTypes.put(0,new CoinType("copper", 1, "mintcraft:coin"));
-        coinTypes.put(1,new CoinType("iron", 1, "mintcraft:coiniron"));
+        coinTypes.put(0,new CoinType("copper", 5, "mintcraft:coin"));
+        coinTypes.put(1,new CoinType("iron", 10, "mintcraft:coiniron"));
+        coinTypes.put(2,new CoinType("gold", 15, "mintcraft:coingold"));
+        coinTypes.put(3,new CoinType("diamond", 20, "mintcraft:diamondcoin"));
+        coinTypes.put(4,new CoinType("emerald", 25, "mintcraft:emeraldcoin"));
+        coinTypes.put(5,new CoinType("ender", 30, "mintcraft:endercoin"));
     }
     
     @Override
