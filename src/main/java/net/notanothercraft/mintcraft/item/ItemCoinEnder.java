@@ -6,7 +6,7 @@ package net.notanothercraft.mintcraft.item;
 public class ItemCoinEnder extends ItemCoin{
     public ItemCoinEnder(){
         super();
-        this.setWorth(25);
+        this.setWorth(30);
         this.setUnlocalizedName("coinender");
         this.setTextureName("mintcraft:endercoin");
     }

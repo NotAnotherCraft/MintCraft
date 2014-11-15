@@ -7,7 +7,7 @@ package net.notanothercraft.mintcraft.item;
 public class ItemCoinDiamond extends ItemCoin{
     public ItemCoinDiamond(){
         super();
-        this.setWorth(15);
+        this.setWorth(20);
         this.setUnlocalizedName("coindiamond");
         this.setTextureName("mintcraft:diamondcoin");
         }
