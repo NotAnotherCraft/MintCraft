@@ -1,13 +1,11 @@
 package net.notanothercraft.mintcraft.item;
 
-import com.google.common.collect.Maps;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 
-import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -42,7 +40,7 @@ public class ItemCoin extends ItemCurrency{
     public void registerIcons(IIconRegister iconRegister) {
         textures = new IIcon[16];
         for(Integer key : CoinType.getCoinTypes().keySet()){
-            textures[key] = iconRegister.registerIcon(CoinType.getCoinType(key).getTexture());
+            textures[key] = iconRegister.registerIcon(CoinType.getCoinType(key).getItemtexture());
         }
     }
 

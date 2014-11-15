@@ -6,6 +6,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.creativetab.CreativeTabs;
+import net.notanothercraft.mintcraft.block.BlockCoinPile;
 import net.notanothercraft.mintcraft.gui.GuiHandler;
 import net.notanothercraft.mintcraft.item.*;
 import org.apache.logging.log4j.Logger;
@@ -21,6 +22,7 @@ public class MintCraftMod {
     public CreativeTabs mintCreativeTab;
     public ItemCoin itemCoin;
     public ItemCoinBag itemCoinBag;
+    public BlockCoinPile blockCoinPile;
 
     @Mod.EventHandler
     public void onPreInit(FMLPreInitializationEvent e){
@@ -39,6 +41,10 @@ public class MintCraftMod {
         itemCoinBag = new ItemCoinBag();
         itemCoinBag.setCreativeTab(mintCreativeTab);
         GameRegistry.registerItem(itemCoinBag, "coinbag");
+
+        blockCoinPile = new BlockCoinPile();
+        blockCoinPile.setCreativeTab(mintCreativeTab);
+        GameRegistry.registerBlock(blockCoinPile, "coinpile");
     }
 
     @Mod.EventHandler
