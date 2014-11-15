@@ -8,7 +8,7 @@ public class ItemCoinIron extends ItemCoin{
     public ItemCoinIron(){
         super();
         this.setWorth(5);
-        this.setUnlocalizedName("ironcoin");
+        this.setUnlocalizedName("coiniron");
         this.setTextureName("mintcraft:coiniron");
     }
 }
