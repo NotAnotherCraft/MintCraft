@@ -6,6 +6,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.creativetab.CreativeTabs;
 import net.notanothercraft.mintcraft.item.ItemCoin;
+import net.notanothercraft.mintcraft.item.ItemCoinIron;
 
 @Mod(modid = "mintCraft", name = "MintCraft", version = "0.0.1")
 public class MintCraftMod {
@@ -15,13 +16,17 @@ public class MintCraftMod {
 
     public CreativeTabs mintCreativeTab;
     public ItemCoin itemCoin;
+    public ItemCoinIron itemCoinIron;
 
     @Mod.EventHandler
     public void onPreInit(FMLPreInitializationEvent e){
         mintCreativeTab = new MintCreativeTab();
         itemCoin = new ItemCoin();
+        itemCoinIron = new ItemCoinIron();
         itemCoin.setCreativeTab(mintCreativeTab);
+        itemCoinIron.setCreativeTab(mintCreativeTab);
         GameRegistry.registerItem(itemCoin,"coin");
+        GameRegistry.registerItem(itemCoinIron,"iron coin");
     }
 
     @Mod.EventHandler
