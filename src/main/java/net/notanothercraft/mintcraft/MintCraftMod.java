@@ -26,7 +26,7 @@ public class MintCraftMod {
         GameRegistry.registerItem(itemCoin, "coin");
 
         itemCoinBag = new ItemCoinBag();
-        itemCoin.setCreativeTab(mintCreativeTab);
+        itemCoinBag.setCreativeTab(mintCreativeTab);
         GameRegistry.registerItem(itemCoinBag, "coinbag");
     }
 
