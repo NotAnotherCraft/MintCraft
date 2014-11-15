@@ -1,6 +1,7 @@
 package net.notanothercraft.mintcraft.item;
 
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 
 /**
  * Created by KJ4IPS on 11/14/2014.
@@ -15,7 +16,7 @@ public abstract class ItemCurrency extends Item implements IValuable{
         this.worth = 0;
     }
 
-    public Integer getWorth() {
+    public Integer getWorth(ItemStack is) {
         return worth;
     }
 
