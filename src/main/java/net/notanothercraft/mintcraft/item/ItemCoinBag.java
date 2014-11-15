@@ -41,7 +41,6 @@ public class ItemCoinBag extends Item {
         if(!world.isRemote) { //NBT manupulation on the server!
             if (!stack.hasTagCompound() || !stack.getTagCompound().hasKey("inventorySize", Constants.NBT.TAG_INT)){
                 player.getCurrentEquippedItem().setTagCompound((new BagContents(8)).saveToNBTCompound());
-                MintCraftMod.instance.getLogger().info("Initializing empty bag for " + player.getDisplayName());
                 player.inventory.markDirty();
             }
         }
@@ -50,12 +49,11 @@ public class ItemCoinBag extends Item {
     @Override
     public boolean onItemUse(ItemStack stack, EntityPlayer player, World world, int x, int y, int z, int side, float hitX, float hitY, float hitZ) {
         if(player.isSneaking()) return false;
-        if(!world.isRemote) { //NBT manupulation on the server!
-            if (!stack.hasTagCompound() || !stack.getTagCompound().hasKey("inventorySize", Constants.NBT.TAG_INT)){
-                player.getCurrentEquippedItem().setTagCompound((new BagContents(8)).saveToNBTCompound());
-                MintCraftMod.instance.getLogger().info("Initializing empty bag for " + player.getDisplayName());
-                player.inventory.markDirty();
-            }
+        if (!stack.hasTagCompound() || !stack.getTagCompound().hasKey("inventorySize", Constants.NBT.TAG_INT)){ //both sides for initial init
+            player.getCurrentEquippedItem().setTagCompound((new BagContents(8)).saveToNBTCompound());
+            player.inventory.markDirty();
+        }
+        if(!world.isRemote) { //Start inv from server
             player.openGui(MintCraftMod.instance, 0, world, x, y, z);
         }
         return true;
