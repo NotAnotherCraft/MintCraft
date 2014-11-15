@@ -9,6 +9,6 @@ public class ItemCoin extends ItemCurrency{
         super();
         this.setWorth(1);
         this.setUnlocalizedName("coin");// Added By azreth
-        this.setTextureName("mintCraft:coin");//TODO push Texture
+        this.setTextureName("mintcraft:coin");//TODO push Texture
     }
 }
