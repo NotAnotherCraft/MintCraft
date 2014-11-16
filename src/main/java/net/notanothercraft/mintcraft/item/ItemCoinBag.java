@@ -26,6 +26,7 @@ public class ItemCoinBag extends Item implements IValuable{
         super();
         this.setUnlocalizedName("coinbag");
         this.setTextureName("mintcraft:coinbag");
+        this.setMaxStackSize(1);
     }
 
     public void registerRecipies(){
