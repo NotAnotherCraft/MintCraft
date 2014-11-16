@@ -115,11 +115,12 @@ public class BagContainer extends Container {
                 workingStack = clickedSlot.getStack().copy();
                 workingStack.stackSize -= numberToMove;
                 clickedSlot.putStack(workingStack.stackSize > 0 ? workingStack.copy() : null);
+                clickedStack = clickedSlot.getStack();
             }
         }
         slotIterator = null;
         slotIterator = inventorySlots.iterator();
-        while(slotIterator.hasNext() && clickedStack.stackSize > 0) { //Search for slots with the same item
+        while(slotIterator.hasNext() && clickedSlot.getHasStack() && clickedStack.stackSize > 0) { //Search for slots with no item
             Slot activeSlot = (Slot) slotIterator.next();
             if(        !sourceInventory.equals(activeSlot.inventory)
                     && !activeSlot.getHasStack()
@@ -137,6 +138,7 @@ public class BagContainer extends Container {
                 workingStack = clickedStack.copy();
                 workingStack.stackSize -= numberToMove;
                 clickedSlot.putStack(workingStack.stackSize > 0 ? workingStack.copy() : null);
+                clickedStack = clickedSlot.getStack();
             }
         }
         return null;
