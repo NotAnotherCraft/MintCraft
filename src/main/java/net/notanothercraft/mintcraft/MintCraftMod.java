@@ -25,6 +25,8 @@ public class MintCraftMod {
     public ItemCoin itemCoin;
     public ItemCoinBag itemCoinBag;
     public ItemGlue itemGlue;
+    public ItemHinge itemHinge;
+    public ItemPin itemPin;
     public ItemCardBoard itemCardBoard;
     public BlockCoinPile blockCoinPile;
     public BlockCardboardBox blockCardboardBox;
@@ -57,6 +59,18 @@ public class MintCraftMod {
         itemCardBoard.setCreativeTab(mintCreativeTab);
         GameRegistry.registerItem(itemCardBoard, "cardboard");
         itemCardBoard.registerRecipies();
+
+        itemPin = new ItemPin();
+        itemPin.setCreativeTab(mintCreativeTab);
+        GameRegistry.registerItem(itemPin, "pin");
+        itemPin.registerRecipies();
+
+        itemHinge = new ItemHinge();
+        itemHinge.setCreativeTab(mintCreativeTab);
+        GameRegistry.registerItem(itemHinge, "hinge");
+        itemHinge.registerRecipies();
+
+
 
         blockCardboardBox = new BlockCardboardBox();
         blockCardboardBox.setCreativeTab(mintCreativeTab);
