@@ -96,7 +96,7 @@ public class BagContainer extends Container {
         IInventory sourceInventory = clickedSlot.inventory;
         if(clickedStack == null) return null;
         Iterator slotIterator = inventorySlots.iterator();
-        while(slotIterator.hasNext() && clickedStack.stackSize > 0){ //Search for slots with the same item
+        while(slotIterator.hasNext() && clickedSlot.getHasStack() && clickedSlot.getStack().stackSize > 0){ //Search for slots with the same item
             Slot activeSlot = (Slot) slotIterator.next();
             if(        !sourceInventory.equals(activeSlot.inventory)
                     && activeSlot.getHasStack()
@@ -144,11 +144,20 @@ public class BagContainer extends Container {
         return null;
     }
 
+    /**
+     * Stacks are considered equivelant if their NBT, Item, and Meta are the same
+     *
+     * @param a One itemstack
+     * @param b another itemstack
+     * @return true if the stacks are equivelant
+     */
     private boolean stacksEquivelent(ItemStack a, ItemStack b){
-        ItemStack a1 = a.copy();
-        a1.stackSize = 1;
-        ItemStack b1 = b.copy();
-        b1.stackSize = 1;
-        return a1.equals(b1);
+        if(!a.getItem().equals(b.getItem())) return false;
+        if(a.getItemDamage() != b.getItemDamage()) return false;
+        if(a.hasTagCompound() != a.hasDisplayName()) return false;
+        if(a.hasTagCompound()){
+            if (a.getTagCompound().equals(b.getTagCompound())) return false;
+        }
+        return true;
     }
 }
