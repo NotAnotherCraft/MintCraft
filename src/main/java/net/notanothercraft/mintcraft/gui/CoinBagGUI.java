@@ -29,4 +29,10 @@ public class CoinBagGUI extends GuiContainer {
         int y = (height - ySize) >> 1 ;
         this.drawTexturedModalRect(x, y, 0, 0, xSize, ySize);
     }
+
+    @Override
+    protected void keyTyped(char character, int keycode) {
+        if(keycode == 1 || keycode == this.mc.gameSettings.keyBindInventory.getKeyCode())
+            this.mc.thePlayer.closeScreen();
+    }
 }
