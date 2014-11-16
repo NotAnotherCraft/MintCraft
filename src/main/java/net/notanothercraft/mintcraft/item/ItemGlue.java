@@ -18,8 +18,18 @@ public class ItemGlue extends Item {
     }
 
     public void registerRecipies(){
+        GameRegistry.addShapelessRecipe(new ItemStack(this, 8, 0),
+                 new ItemStack(Items.potionitem, 1, 0),
+                 new ItemStack(Items.slime_ball, 1, 0));
         GameRegistry.addShapelessRecipe(new ItemStack(this, 1, 0),
-                 new ItemStack(Items.glass_bottle, 1, 0),
-                 new ItemStack(Items.slime_ball,1, 0));
+                new ItemStack(Items.wheat_seeds, 1, 0),
+                new ItemStack(Items.potionitem, 1, 0));
+        GameRegistry.addShapelessRecipe(new ItemStack(this, 1, 0),
+                new ItemStack(Items.melon_seeds, 1, 0),
+                new ItemStack(Items.potionitem, 1, 0));
+        GameRegistry.addShapelessRecipe(new ItemStack(this, 1, 0),
+                new ItemStack(Items.pumpkin_seeds, 1, 0),
+                new ItemStack(Items.potionitem, 1, 0));
     }
 }
+
