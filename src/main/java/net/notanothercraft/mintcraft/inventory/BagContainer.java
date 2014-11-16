@@ -154,7 +154,7 @@ public class BagContainer extends Container {
     private boolean stacksEquivelent(ItemStack a, ItemStack b){
         if(!a.getItem().equals(b.getItem())) return false;
         if(a.getItemDamage() != b.getItemDamage()) return false;
-        if(a.hasTagCompound() != a.hasDisplayName()) return false;
+        if(a.hasTagCompound() != b.hasTagCompound()) return false;
         if(a.hasTagCompound()){
             if (a.getTagCompound().equals(b.getTagCompound())) return false;
         }
