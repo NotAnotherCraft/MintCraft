@@ -30,11 +30,12 @@ public class BlockCardboardBox extends Block {
     public IIcon getIcon(int side, int meta) {
         switch(side){
             case 0:
-                return textures[2];
-            case 1:
-                return textures[1];
-            case 5:
                 return textures[0];
+            case 1:
+                return textures[2];
+            case 2:
+            case 3:
+                return textures[1];
             default:
                 return textures[3];
         }
