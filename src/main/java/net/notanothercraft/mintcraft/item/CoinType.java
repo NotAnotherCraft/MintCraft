@@ -23,12 +23,12 @@ public class CoinType {
     }
 
     public static void registerCoins() {
-        registerCoinType(0, new CoinType("copper", 5, "mintcraft:coin","mintcraft:coinblock"));
-        registerCoinType(1, new CoinType("iron", 10, "mintcraft:coiniron","mintcraft:ironcoinblock"));
-        registerCoinType(2, new CoinType("gold", 15, "mintcraft:goldcoin","mintcraft:goldcoinblock"));
-        registerCoinType(3, new CoinType("diamond", 20, "mintcraft:diamondcoin","mintcraft:diamondcoinblock"));
-        registerCoinType(4, new CoinType("emerald", 25, "mintcraft:emeraldcoin","mintcraft:emerldcoinblock"));
-        registerCoinType(5, new CoinType("ender", 30, "mintcraft:endercoin","mintcraft:endercoinblock"));
+        registerCoinType(0, new CoinType("copper", 1, "mintcraft:coin","mintcraft:coinblock"));
+        registerCoinType(1, new CoinType("iron", 8, "mintcraft:coiniron","mintcraft:ironcoinblock"));
+        registerCoinType(2, new CoinType("gold", 64, "mintcraft:goldcoin","mintcraft:goldcoinblock"));
+        registerCoinType(3, new CoinType("diamond", 512, "mintcraft:diamondcoin","mintcraft:diamondcoinblock"));
+        registerCoinType(4, new CoinType("emerald", 4096, "mintcraft:emeraldcoin","mintcraft:emerldcoinblock"));
+        registerCoinType(5, new CoinType("ender",32768, "mintcraft:endercoin","mintcraft:endercoinblock"));
     }
 
     public Integer getWorth() {
