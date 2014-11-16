@@ -48,38 +48,37 @@ public class MintCraftMod {
         itemCoinBag = new ItemCoinBag();
         itemCoinBag.setCreativeTab(mintCreativeTab);
         GameRegistry.registerItem(itemCoinBag, "coinbag");
-        itemCoinBag.registerRecipies();
 
         itemGlue = new ItemGlue();
         itemGlue.setCreativeTab(mintCreativeTab);
         GameRegistry.registerItem(itemGlue, "glue");
-        itemGlue.registerRecipies();
 
         itemCardBoard = new ItemCardBoard();
         itemCardBoard.setCreativeTab(mintCreativeTab);
         GameRegistry.registerItem(itemCardBoard, "cardboard");
-        itemCardBoard.registerRecipies();
 
         itemPin = new ItemPin();
         itemPin.setCreativeTab(mintCreativeTab);
         GameRegistry.registerItem(itemPin, "pin");
-        itemPin.registerRecipies();
 
         itemHinge = new ItemHinge();
         itemHinge.setCreativeTab(mintCreativeTab);
         GameRegistry.registerItem(itemHinge, "hinge");
-        itemHinge.registerRecipies();
-
-
 
         blockCardboardBox = new BlockCardboardBox();
         blockCardboardBox.setCreativeTab(mintCreativeTab);
         GameRegistry.registerBlock(blockCardboardBox,"cardboardbox");
-        blockCardboardBox.registerRecipies();
 
         blockCoinPile = new BlockCoinPile();
         blockCoinPile.setCreativeTab(mintCreativeTab);
         GameRegistry.registerBlock(blockCoinPile,ItemBlockCoinPile.class, "coinpile");
+
+        itemCoinBag.registerRecipies();
+        itemGlue.registerRecipies();
+        itemCardBoard.registerRecipies();
+        itemPin.registerRecipies();
+        itemHinge.registerRecipies();
+        blockCardboardBox.registerRecipies();
     }
 
     @Mod.EventHandler
