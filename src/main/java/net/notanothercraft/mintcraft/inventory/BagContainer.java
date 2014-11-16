@@ -114,7 +114,7 @@ public class BagContainer extends Container {
                 activeSlot.putStack(workingStack.copy());
                 workingStack = clickedSlot.getStack().copy();
                 workingStack.stackSize -= numberToMove;
-                clickedSlot.putStack(workingStack.stackSize > 1 ? workingStack.copy() : null);
+                clickedSlot.putStack(workingStack.stackSize > 0 ? workingStack.copy() : null);
             }
         }
         slotIterator = null;
@@ -136,6 +136,7 @@ public class BagContainer extends Container {
                 activeSlot.putStack(workingStack.copy());
                 workingStack = clickedStack.copy();
                 workingStack.stackSize -= numberToMove;
+                clickedSlot.putStack(workingStack.stackSize > 0 ? workingStack.copy() : null);
             }
         }
         return null;
