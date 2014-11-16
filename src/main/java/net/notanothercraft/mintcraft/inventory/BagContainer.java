@@ -5,7 +5,9 @@ import com.sun.javafx.geom.Vec2d;
 import cpw.mods.fml.common.FMLCommonHandler;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
+import net.minecraft.init.Items;
 import net.minecraft.inventory.Container;
+import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -13,6 +15,7 @@ import net.minecraft.server.MinecraftServer;
 import net.notanothercraft.mintcraft.MintCraftMod;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -88,6 +91,61 @@ public class BagContainer extends Container {
 
     @Override
     public ItemStack transferStackInSlot(EntityPlayer player, int slot){
+        Slot clickedSlot = this.getSlot(slot);
+        ItemStack clickedStack = clickedSlot.getStack();
+        IInventory sourceInventory = clickedSlot.inventory;
+        if(clickedStack == null) return null;
+        Iterator slotIterator = inventorySlots.iterator();
+        while(slotIterator.hasNext() && clickedStack.stackSize > 0){ //Search for slots with the same item
+            Slot activeSlot = (Slot) slotIterator.next();
+            if(        !sourceInventory.equals(activeSlot.inventory)
+                    && activeSlot.getHasStack()
+                    && stacksEquivelent(activeSlot.getStack(), clickedStack)
+                    && activeSlot.canTakeStack(player)
+                    && activeSlot.isItemValid(clickedStack)){
+                //Mix in
+                int numberToMove = Math.min(
+                        clickedStack.stackSize,
+                        activeSlot.getSlotStackLimit() - activeSlot.getStack().stackSize
+                );
+                ItemStack workingStack;
+                workingStack = activeSlot.getStack().copy();
+                workingStack.stackSize += numberToMove;
+                activeSlot.putStack(workingStack.copy());
+                workingStack = clickedSlot.getStack().copy();
+                workingStack.stackSize -= numberToMove;
+                clickedSlot.putStack(workingStack.stackSize > 1 ? workingStack.copy() : null);
+            }
+        }
+        slotIterator = null;
+        slotIterator = inventorySlots.iterator();
+        while(slotIterator.hasNext() && clickedStack.stackSize > 0) { //Search for slots with the same item
+            Slot activeSlot = (Slot) slotIterator.next();
+            if(        !sourceInventory.equals(activeSlot.inventory)
+                    && !activeSlot.getHasStack()
+                    && activeSlot.canTakeStack(player)
+                    && activeSlot.isItemValid(clickedStack)){
+                //Move In
+                int numberToMove = Math.min(
+                        clickedStack.stackSize,
+                        activeSlot.getSlotStackLimit()
+                );
+                ItemStack workingStack;
+                workingStack = clickedStack.copy();
+                workingStack.stackSize = numberToMove;
+                activeSlot.putStack(workingStack.copy());
+                workingStack = clickedStack.copy();
+                workingStack.stackSize -= numberToMove;
+            }
+        }
         return null;
+    }
+
+    private boolean stacksEquivelent(ItemStack a, ItemStack b){
+        ItemStack a1 = a.copy();
+        a1.stackSize = 1;
+        ItemStack b1 = b.copy();
+        b1.stackSize = 1;
+        return a1.equals(b1);
     }
 }
