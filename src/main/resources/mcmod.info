@@ -2,8 +2,8 @@
 {
     "modid": "MintCraft",
     "name": "MintCraft",
-    "version": "@version@",
-    "mcversion": "@mcversion@",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
     "description": "Adds curency!",
     "credits": "Thanks to the FML team!",
     "authorList" : [ "KJ4IPS", "Azreth", "JasonDemonic" ]
