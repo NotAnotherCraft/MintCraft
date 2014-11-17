@@ -15,6 +15,6 @@ public class MintCreativeTab extends CreativeTabs{
 
     @Override
     public Item getTabIconItem() {
-        return Items.gold_ingot;
+        return MintCraftMod.instance.itemCoin;
     }
 }
