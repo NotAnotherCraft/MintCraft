@@ -4,7 +4,7 @@ import cpw.mods.fml.common.network.IGuiHandler;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import net.notanothercraft.mintcraft.inventory.container.BagContainer;
+import net.notanothercraft.mintcraft.inventory.container.ContainerCoinBag;
 import net.notanothercraft.mintcraft.inventory.BagContents;
 import net.notanothercraft.mintcraft.util.GuiTypes;
 
@@ -19,7 +19,7 @@ public class GuiHandler implements IGuiHandler {
             case GuiTypes.COIN_BAG:
                 ItemStack stack = player.getCurrentEquippedItem();
                 BagContents contents = BagContents.loadFromNBTCompound(stack.getTagCompound());
-                return new BagContainer(player.inventory, contents, stack);
+                return new ContainerCoinBag(player.inventory, contents, stack);
             default:
                 return null;
         }

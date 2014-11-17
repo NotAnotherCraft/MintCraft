@@ -4,7 +4,7 @@ import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
-import net.notanothercraft.mintcraft.inventory.container.BagContainer;
+import net.notanothercraft.mintcraft.inventory.container.ContainerCoinBag;
 import net.notanothercraft.mintcraft.inventory.BagContents;
 import org.lwjgl.opengl.GL11;
 
@@ -16,7 +16,7 @@ public class CoinBagGUI extends GuiContainer {
     private BagContents contents;
 
     public CoinBagGUI(InventoryPlayer playerInv, BagContents contents, ItemStack slot) {
-        super(new BagContainer(playerInv, contents, slot));
+        super(new ContainerCoinBag(playerInv, contents, slot));
     }
 
     @Override

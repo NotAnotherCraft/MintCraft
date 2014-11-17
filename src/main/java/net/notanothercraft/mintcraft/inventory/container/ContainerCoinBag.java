@@ -15,7 +15,7 @@ import net.notanothercraft.mintcraft.util.InventoryUtil;
 /**
  * Created by KJ4IPS on 11/15/2014.
  */
-public class BagContainer extends Container {
+public class ContainerCoinBag extends Container {
 
     protected BagContents contents;
     protected InventoryPlayer playerInv;
@@ -33,7 +33,7 @@ public class BagContainer extends Container {
 
     };
 
-    public BagContainer(InventoryPlayer playerInv, BagContents contents, ItemStack bag){
+    public ContainerCoinBag(InventoryPlayer playerInv, BagContents contents, ItemStack bag){
         this.contents = contents;
         this.playerInv = playerInv;
         this.bag = bag;
