@@ -10,6 +10,7 @@ import net.minecraft.nbt.NBTTagList;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.Constants;
 import net.notanothercraft.mintcraft.MintCraftMod;
+import net.notanothercraft.mintcraft.gui.GuiTypes;
 import net.notanothercraft.mintcraft.inventory.BagContents;
 
 import java.util.List;
@@ -64,7 +65,7 @@ public class ItemCoinBag extends Item implements IValuable{
             player.inventory.markDirty();
         }
         if(!world.isRemote) { //Start inv from server
-            player.openGui(MintCraftMod.instance, 0, world, 0, 0, 0);
+            player.openGui(MintCraftMod.instance, GuiTypes.COIN_BAG, world, 0, 0, 0);
         }
         return stack;
     }

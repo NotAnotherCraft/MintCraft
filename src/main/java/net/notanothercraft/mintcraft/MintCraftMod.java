@@ -30,6 +30,7 @@ public class MintCraftMod {
     public ItemCardBoard itemCardBoard;
     public BlockCoinPile blockCoinPile;
     public BlockCardboardBox blockCardboardBox;
+    public ItemKey itemKey;
 
     @Mod.EventHandler
     public void onPreInit(FMLPreInitializationEvent e){
@@ -73,12 +74,17 @@ public class MintCraftMod {
         blockCoinPile.setCreativeTab(mintCreativeTab);
         GameRegistry.registerBlock(blockCoinPile,ItemBlockCoinPile.class, "coinpile");
 
+        itemKey = new ItemKey();
+        itemKey.setCreativeTab(mintCreativeTab);
+        GameRegistry.registerItem(itemKey,"key");
+
         itemCoinBag.registerRecipies();
         itemGlue.registerRecipies();
         itemCardBoard.registerRecipies();
         itemPin.registerRecipies();
         itemHinge.registerRecipies();
         blockCardboardBox.registerRecipies();
+        itemKey.registerRecipies();
     }
 
     @Mod.EventHandler

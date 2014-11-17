@@ -1,22 +1,15 @@
 package net.notanothercraft.mintcraft.inventory;
 
-import com.google.common.collect.Lists;
-import com.sun.javafx.geom.Vec2d;
-import cpw.mods.fml.common.FMLCommonHandler;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
-import net.minecraft.init.Items;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.server.MinecraftServer;
 import net.notanothercraft.mintcraft.MintCraftMod;
 
-import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
 
 /**
  * Created by KJ4IPS on 11/15/2014.
