@@ -19,7 +19,6 @@ public class ModelCardboardBox extends ModelBase {
         theBox = new ModelRenderer(this, 0, 0);
         theBox.addBox(-4F, 0F, -4F, 8, 8, 8);
         theBox.setRotationPoint(0F, 16F, 0F);
-        theBox.setTextureSize(32,32);
         theBox.mirror = true;
 
     }

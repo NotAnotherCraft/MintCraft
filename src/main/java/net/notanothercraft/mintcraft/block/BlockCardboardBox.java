@@ -84,7 +84,7 @@ public class BlockCardboardBox extends BlockContainer {
     public BlockCardboardBox(){
         super(Material.wood);
         this.setBlockName("cardboardbox");
-
+        this.setBlockBounds(.25F,0F,.25F,.75F,.5F,.75F);
 
     }
 
