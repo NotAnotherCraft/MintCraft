@@ -4,7 +4,7 @@ import cpw.mods.fml.common.network.IGuiHandler;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import net.notanothercraft.mintcraft.inventory.BagContainer;
+import net.notanothercraft.mintcraft.inventory.container.BagContainer;
 import net.notanothercraft.mintcraft.inventory.BagContents;
 
 /**

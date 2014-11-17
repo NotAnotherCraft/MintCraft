@@ -4,7 +4,7 @@ import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
-import net.notanothercraft.mintcraft.inventory.BagContainer;
+import net.notanothercraft.mintcraft.inventory.container.BagContainer;
 import net.notanothercraft.mintcraft.inventory.BagContents;
 import org.lwjgl.opengl.GL11;
 

@@ -1,4 +1,4 @@
-package net.notanothercraft.mintcraft.inventory;
+package net.notanothercraft.mintcraft.inventory.slot;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
