@@ -1,9 +1,11 @@
 package net.notanothercraft.mintcraft.block;
 
 import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -65,7 +67,7 @@ public class BlockCardboardBox extends BlockContainer {
     }
 
     public BlockCardboardBox(){
-        super(Material.carpet);
+        super(Material.wood);
         this.setBlockName("cardboardbox");
 
 
@@ -79,6 +81,20 @@ public class BlockCardboardBox extends BlockContainer {
                 'g', new ItemStack(MintCraftMod.instance.itemGlue, 1, 0),
                 'c', new ItemStack(MintCraftMod.instance.itemCardBoard, 1, 0),
                 'b', new ItemStack(MintCraftMod.instance.itemCoinBag, 1, 0));
+    }
+
+    @Override
+    public void breakBlock(World world, int x, int y, int z, Block blockType, int someNumber) {
+        if(!world.isRemote) {
+            TileCardboardBox breakingTile = (TileCardboardBox) world.getTileEntity(x, y, z);
+            for (int i = 0; i < breakingTile.getSizeInventory(); i++) {
+                ItemStack dropStack = breakingTile.getStackInSlot(i);
+                if (dropStack != null) {
+                    world.spawnEntityInWorld(new EntityItem(world, x, y, z, dropStack));
+                }
+            }
+        }
+        super.breakBlock(world, x, y, z, blockType, someNumber);
     }
 }
 

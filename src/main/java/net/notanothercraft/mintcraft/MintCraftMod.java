@@ -11,6 +11,7 @@ import net.notanothercraft.mintcraft.block.BlockCoinPile;
 import net.notanothercraft.mintcraft.block.itemblock.ItemBlockCoinPile;
 import net.notanothercraft.mintcraft.gui.GuiHandler;
 import net.notanothercraft.mintcraft.item.*;
+import net.notanothercraft.mintcraft.tileentity.TileCardboardBox;
 import net.notanothercraft.mintcraft.util.CoinType;
 import org.apache.logging.log4j.Logger;
 
@@ -70,6 +71,7 @@ public class MintCraftMod {
         blockCardboardBox = new BlockCardboardBox();
         blockCardboardBox.setCreativeTab(mintCreativeTab);
         GameRegistry.registerBlock(blockCardboardBox,"cardboardbox");
+        GameRegistry.registerTileEntity(TileCardboardBox.class, "cardboardbox");
 
         blockCoinPile = new BlockCoinPile();
         blockCoinPile.setCreativeTab(mintCreativeTab);

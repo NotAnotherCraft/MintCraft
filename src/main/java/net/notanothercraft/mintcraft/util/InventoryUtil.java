@@ -23,7 +23,7 @@ public class InventoryUtil {
         return slot;
     }
 
-    public void bindPlayerInv(List inventorySlots, List inventoryItemStacks, InventoryPlayer playerInv,int drawX, int drawY, int hotbarOffset){
+    public static void bindPlayerInv(List inventorySlots, List inventoryItemStacks, InventoryPlayer playerInv,int drawX, int drawY, int hotbarOffset){
         //main three inventory rows
         for(int i = 0; i < 3 ; i++){
             for(int j = 0; j < 9; j++){
