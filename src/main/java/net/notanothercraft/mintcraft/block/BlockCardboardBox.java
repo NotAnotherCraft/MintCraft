@@ -25,6 +25,21 @@ public class BlockCardboardBox extends BlockContainer {
     private static final String[] textureNames = new String[]{"bottem", "front", "top", "leftrigh"};
 
     @Override
+    public boolean renderAsNormalBlock() {
+        return false;
+    }
+
+    @Override
+    public int getRenderType() {
+        return -1;
+    }
+
+    @Override
+    public boolean isOpaqueCube() {
+        return false;
+    }
+
+    @Override
     public void registerBlockIcons(IIconRegister iconRegister) {
         textures = new IIcon[4];
         for(int i =0; i<textureNames.length;i++){

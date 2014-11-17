@@ -1,6 +1,7 @@
 package net.notanothercraft.mintcraft;
 
 import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
@@ -11,6 +12,7 @@ import net.notanothercraft.mintcraft.block.BlockCoinPile;
 import net.notanothercraft.mintcraft.block.itemblock.ItemBlockCoinPile;
 import net.notanothercraft.mintcraft.gui.GuiHandler;
 import net.notanothercraft.mintcraft.item.*;
+import net.notanothercraft.mintcraft.proxy.MintcraftCommonProxy;
 import net.notanothercraft.mintcraft.tileentity.TileCardboardBox;
 import net.notanothercraft.mintcraft.util.CoinType;
 import org.apache.logging.log4j.Logger;
@@ -22,6 +24,9 @@ public class MintCraftMod {
     public static MintCraftMod instance;
 
     private Logger logger;
+
+    @SidedProxy(clientSide = "net.notanothercraft.mintcraft.proxy.MintcraftClientProxy", serverSide = "net.notanothercraft.mintcraft.proxy.MintcraftCommonProxy")
+    public static MintcraftCommonProxy proxy;
 
     public CreativeTabs mintCreativeTab;
     public ItemCoin itemCoin;
@@ -40,6 +45,7 @@ public class MintCraftMod {
         logger = e.getModLog();
 
         NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandler());
+        proxy.registerTERender();
 
         CoinType.registerCoins();
         mintCreativeTab = new MintCreativeTab();

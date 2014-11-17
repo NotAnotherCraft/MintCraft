@@ -13,11 +13,14 @@ public class ModelCardboardBox extends ModelBase {
     ModelRenderer theBox;
 
     public ModelCardboardBox(){
-        textureWidth = 64;
-        textureHeight = 64;
+        textureWidth = 32;
+        textureHeight = 32;
 
         theBox = new ModelRenderer(this, 0, 0);
-        theBox.addBox(-8F, -8F, -8F, 8, 8, 8);
+        theBox.addBox(-4F, 0F, -4F, 8, 8, 8);
+        theBox.setRotationPoint(0F, 16F, 0F);
+        theBox.setTextureSize(32,32);
+        theBox.mirror = true;
 
     }
 
@@ -25,7 +28,7 @@ public class ModelCardboardBox extends ModelBase {
     public void render(Entity entity, float f1, float f2, float f3, float f4, float f5, float f6) {
         super.render(entity, f1, f2, f3, f4, f5, f6);
         setRotationAngles(f1, f2, f3 ,f4, f5, f6, entity);
-        theBox.render(f5);
+        theBox.render(f6);
     }
 
 
