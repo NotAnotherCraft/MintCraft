@@ -7,10 +7,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
-import net.minecraft.world.IBlockAccess;
-import net.minecraft.world.World;
-import net.notanothercraft.mintcraft.MintCreativeTab;
-import net.notanothercraft.mintcraft.item.CoinType;
+import net.notanothercraft.mintcraft.util.CoinType;
 import net.notanothercraft.mintcraft.item.IValuable;
 
 import java.util.List;

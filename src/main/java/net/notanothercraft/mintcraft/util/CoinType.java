@@ -1,4 +1,4 @@
-package net.notanothercraft.mintcraft.item;
+package net.notanothercraft.mintcraft.util;
 
 import com.google.common.collect.Maps;
 

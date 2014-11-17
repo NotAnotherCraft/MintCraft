@@ -11,6 +11,7 @@ import net.notanothercraft.mintcraft.block.BlockCoinPile;
 import net.notanothercraft.mintcraft.block.itemblock.ItemBlockCoinPile;
 import net.notanothercraft.mintcraft.gui.GuiHandler;
 import net.notanothercraft.mintcraft.item.*;
+import net.notanothercraft.mintcraft.util.CoinType;
 import org.apache.logging.log4j.Logger;
 
 @Mod(modid = "mintCraft", name = "MintCraft", version = "0.0.1")

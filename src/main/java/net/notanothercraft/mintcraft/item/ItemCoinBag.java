@@ -10,7 +10,7 @@ import net.minecraft.nbt.NBTTagList;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.Constants;
 import net.notanothercraft.mintcraft.MintCraftMod;
-import net.notanothercraft.mintcraft.gui.GuiTypes;
+import net.notanothercraft.mintcraft.util.GuiTypes;
 import net.notanothercraft.mintcraft.inventory.BagContents;
 
 import java.util.List;

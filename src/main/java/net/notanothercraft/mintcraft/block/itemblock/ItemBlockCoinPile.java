@@ -4,7 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
-import net.notanothercraft.mintcraft.item.CoinType;
+import net.notanothercraft.mintcraft.util.CoinType;
 
 /**
  * Created by KJ4IPS on 11/15/2014.

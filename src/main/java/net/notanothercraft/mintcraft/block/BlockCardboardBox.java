@@ -1,7 +1,6 @@
 package net.notanothercraft.mintcraft.block;
 
 import cpw.mods.fml.common.registry.GameRegistry;
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
@@ -12,8 +11,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
 import net.notanothercraft.mintcraft.MintCraftMod;
-import net.notanothercraft.mintcraft.gui.GuiHandler;
-import net.notanothercraft.mintcraft.gui.GuiTypes;
+import net.notanothercraft.mintcraft.util.GuiTypes;
 import net.notanothercraft.mintcraft.tileentity.TileCardboardBox;
 
 /**

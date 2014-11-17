@@ -6,6 +6,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.notanothercraft.mintcraft.inventory.container.BagContainer;
 import net.notanothercraft.mintcraft.inventory.BagContents;
+import net.notanothercraft.mintcraft.util.GuiTypes;
 
 /**
  * Created by KJ4IPS on 11/15/2014.
