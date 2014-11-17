@@ -8,8 +8,8 @@ import net.notanothercraft.mintcraft.MintCraftMod;
 /**
  * Created by KJ4IPS on 11/14/2014.
  */
-public class CoinSlot extends Slot {
-    public CoinSlot(IInventory inventory, int index, int x, int y) {
+public class SlotCoin extends Slot {
+    public SlotCoin(IInventory inventory, int index, int x, int y) {
         super(inventory, index, x, y);
     }
 

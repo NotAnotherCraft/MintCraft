@@ -8,8 +8,8 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.notanothercraft.mintcraft.MintCraftMod;
 import net.notanothercraft.mintcraft.inventory.BagContents;
-import net.notanothercraft.mintcraft.inventory.slot.CoinSlot;
-import net.notanothercraft.mintcraft.inventory.slot.LockedSlot;
+import net.notanothercraft.mintcraft.inventory.slot.SlotCoin;
+import net.notanothercraft.mintcraft.inventory.slot.SlotLocked;
 import net.notanothercraft.mintcraft.util.InventoryUtil;
 
 /**
@@ -43,7 +43,7 @@ public class BagContainer extends Container {
 
     protected void bindBagInv(BagContents contents){
         for(int i = 0; i < contents.getSizeInventory(); i++){
-            addSlotToContainer(new CoinSlot(contents,i,slotPositions[i][0],slotPositions[i][1]));
+            addSlotToContainer(new SlotCoin(contents,i,slotPositions[i][0],slotPositions[i][1]));
         }
     }
 
@@ -64,7 +64,7 @@ public class BagContainer extends Container {
         if(inv.getStackInSlot(index) != null &&
                 inv.getStackInSlot(index).getItem() != null &&
                 inv.getStackInSlot(index).getItem().equals(itemToLock)){
-            addSlotToContainer(new LockedSlot(inv, index, drawX, drawY));
+            addSlotToContainer(new SlotLocked(inv, index, drawX, drawY));
         }else{
             addSlotToContainer(new Slot(inv, index, drawX, drawY));
         }

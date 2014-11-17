@@ -7,8 +7,8 @@ import net.minecraft.inventory.Slot;
 /**
  * Created by KJ4IPS on 11/15/2014.
  */
-public class LockedSlot extends Slot {
-    public LockedSlot(IInventory inventory, int index, int drawX, int drawY) {
+public class SlotLocked extends Slot {
+    public SlotLocked(IInventory inventory, int index, int drawX, int drawY) {
         super(inventory, index, drawX, drawY);
     }
 
