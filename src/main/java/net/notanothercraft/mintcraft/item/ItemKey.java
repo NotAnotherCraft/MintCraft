@@ -21,8 +21,8 @@ public class ItemKey extends Item implements IUnlocker {
     public ItemKey() {
         super();
         this.setMaxStackSize(4);
-        this.setUnlocalizedName("key");
-        this.setTextureName("mintcraft:key");
+        this.setUnlocalizedName("gkey");
+        this.setTextureName("mintcraft:goldenkey");
     }
 
     public void registerRecipies(){

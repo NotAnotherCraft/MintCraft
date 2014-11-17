@@ -32,12 +32,14 @@ public class MintCraftMod {
     public ItemCoin itemCoin;
     public ItemCoinBag itemCoinBag;
     public ItemGlue itemGlue;
-    public ItemHinge itemHinge;
     public ItemPin itemPin;
+    public ItemHinge itemHinge;
+    public ItemHandle itemHandle;
+    public ItemKey itemKey;
     public ItemCardBoard itemCardBoard;
     public BlockCoinPile blockCoinPile;
     public BlockCardboardBox blockCardboardBox;
-    public ItemKey itemKey;
+
 
     @Mod.EventHandler
     public void onPreInit(FMLPreInitializationEvent e){
@@ -74,6 +76,10 @@ public class MintCraftMod {
         itemHinge.setCreativeTab(mintCreativeTab);
         GameRegistry.registerItem(itemHinge, "hinge");
 
+        itemHandle =new ItemHandle();
+        itemHandle.setCreativeTab(mintCreativeTab);
+        GameRegistry.registerItem(itemHandle, "handle");
+
         blockCardboardBox = new BlockCardboardBox();
         blockCardboardBox.setCreativeTab(mintCreativeTab);
         GameRegistry.registerBlock(blockCardboardBox,"cardboardbox");
@@ -92,6 +98,7 @@ public class MintCraftMod {
         itemCardBoard.registerRecipies();
         itemPin.registerRecipies();
         itemHinge.registerRecipies();
+        itemHandle.registerRecipies();
         blockCardboardBox.registerRecipies();
         itemKey.registerRecipies();
     }
