@@ -61,13 +61,13 @@ public class TileCardboardBox extends TileEntity implements ISidedInventory, IIn
     @Override
     public ItemStack decrStackSize(int slot, int amount) {
         ItemStack newStack, inventoryStack;
-        inventoryStack = getStackInSlot(slot).copy();
         newStack = null;
-        if(inventoryStack != null){
+        if(getStackInSlot(slot) != null){
+            inventoryStack = getStackInSlot(slot).copy();
             newStack = inventoryStack.splitStack(amount);
-            if(inventoryStack.stackSize <= amount) inventoryStack = null;
+            if(inventoryStack.stackSize < 1) inventoryStack = null;
+            setInventorySlotContents(slot,inventoryStack);
         }
-        setInventorySlotContents(slot,inventoryStack);
         return newStack;
     }
 
