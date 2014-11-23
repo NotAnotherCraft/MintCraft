@@ -50,7 +50,6 @@ public class ContainerCardboardBox extends Container {
 
     @Override
     public boolean canInteractWith(EntityPlayer player) {
-        //return tile.isUseableByPlayer(player);
-        return true;
+        return tile.isUseableByPlayer(player);
     }
 }

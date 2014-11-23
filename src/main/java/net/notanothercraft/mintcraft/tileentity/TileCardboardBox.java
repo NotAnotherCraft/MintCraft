@@ -113,7 +113,7 @@ public class TileCardboardBox extends TileEntity implements ISidedInventory, IIn
      */
     @Override
     public boolean isUseableByPlayer(EntityPlayer player) {
-        return false;
+        return true;
     }
 
     @Override
