@@ -105,6 +105,7 @@ public class MintCraftMod {
         itemPin.registerRecipies();
         itemHinge.registerRecipies();
         itemHandle.registerRecipies();
+        itemSafewall.registerRecipes();
         blockCardboardBox.registerRecipies();
         itemKey.registerRecipies();
     }
