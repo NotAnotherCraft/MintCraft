@@ -1,6 +1,6 @@
 package net.notanothercraft.mintcraft.proxy;
 
-import cpw.mods.fml.client.registry.ClientRegistry;
+import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.notanothercraft.mintcraft.render.renderer.RendererCardboardBox;
 import net.notanothercraft.mintcraft.tileentity.TileCardboardBox;
 
