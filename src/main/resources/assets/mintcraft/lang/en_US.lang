@@ -12,6 +12,7 @@ item.hinge.name=Hinge
 item.pin.name=Pin
 item.handle.name=Handle
 item.gkey.name=Master Key
+item.safewall.name=Safe Wall
 tile.cardboardbox.name=Cardboard Box
 tile.safe.name=Safe
 tile.coinpile.name=Coin pile

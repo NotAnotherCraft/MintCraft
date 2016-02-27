@@ -37,8 +37,10 @@ public class MintCraftMod {
     public ItemHandle itemHandle;
     public ItemKey itemKey;
     public ItemCardBoard itemCardBoard;
+    public ItemSafewall itemSafewall;
     public BlockCoinPile blockCoinPile;
     public BlockCardboardBox blockCardboardBox;
+
 
 
     @Mod.EventHandler
@@ -76,9 +78,13 @@ public class MintCraftMod {
         itemHinge.setCreativeTab(mintCreativeTab);
         GameRegistry.registerItem(itemHinge, "hinge");
 
-        itemHandle =new ItemHandle();
+        itemHandle = new ItemHandle();
         itemHandle.setCreativeTab(mintCreativeTab);
         GameRegistry.registerItem(itemHandle, "handle");
+
+        itemSafewall = new ItemSafewall();
+        itemSafewall.setCreativeTab(mintCreativeTab);
+        GameRegistry.registerItem(itemSafewall, "safewall");
 
         blockCardboardBox = new BlockCardboardBox();
         blockCardboardBox.setCreativeTab(mintCreativeTab);
