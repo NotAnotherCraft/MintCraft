@@ -11,12 +11,13 @@ buildscript {
         }
     }
     dependencies {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:1.2-SNAPSHOT'
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.1-SNAPSHOT'
     }
 }
+plugins {id "net.minecraftforge.gradle.forge" version "2.0.2"}
 
 apply plugin: 'java'
-apply plugin: 'forge'
+
 
 sourceCompatibility = 1.6
 
@@ -25,8 +26,9 @@ group = 'net.notanotercraft.mintcraft'
 archivesBaseName = 'modid'
 
 minecraft {
-    version = "1.7.10-10.13.2.1236"
+    version = "1.8.9-11.15.1.1761"
     runDir = "minecraft"
+    mappings = "stable_20"
 }
 
 repositories {
