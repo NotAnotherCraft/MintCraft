@@ -10,9 +10,10 @@ import net.notanothercraft.mintcraft.MintCraftMod;
  * Created by Azreth on 11/15/14.
  */
 public class ItemCardBoard extends Item {
+    private final String name = "cardboard";
     public ItemCardBoard(){
+        GameRegistry.registerItem(this, ItemCardBoard);
         this.setUnlocalizedName("cardboard");
-        this.setTextureName("mintcraft:cardboard");
         this.setMaxStackSize(32);
     }
 

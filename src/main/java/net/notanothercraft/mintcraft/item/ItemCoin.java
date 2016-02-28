@@ -8,6 +8,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 import net.notanothercraft.mintcraft.util.CoinType;
 
+import javax.swing.*;
 import java.util.List;
 
 /**
@@ -18,7 +19,7 @@ public class ItemCoin extends ItemCurrency{
 
 
 
-    private IIcon[] textures;
+    private Icon[] textures;
 
     public ItemCoin(){
         super();
